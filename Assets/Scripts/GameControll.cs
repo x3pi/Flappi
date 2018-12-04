@@ -6,7 +6,16 @@ public class GameControll : MonoBehaviour
 {
     public static GameControll instance;
 
-    public bool gameOver = false;
+    public bool gameOver = true;
+    private int score = 0;
+
+
+    public AudioSource audio;
+    public AudioClip audioDie;
+    public AudioClip audioScore;
+    public AudioClip audioHit;
+
+
 
     void Awake()
     {
@@ -31,9 +40,35 @@ public class GameControll : MonoBehaviour
 
     }
 
+
+    public void BirdScored()
+    {
+        if (gameOver == false)
+        {
+            audio.clip = audioScore;
+            audio.Play();
+            score++;
+        }
+
+    }
+
     public void BirdDied()
     {
-        gameOver = true;
-		Debug.Log("Die");
+        if (gameOver == false)
+        {
+            StartCoroutine(playEngineSound());
+            gameOver = true;
+        }
     }
+
+    IEnumerator playEngineSound()
+    {
+        audio.clip = audioHit;
+        audio.Play();
+        yield return new WaitForSeconds(audio.clip.length);
+        audio.clip = audioDie;
+        audio.Play();
+    }
+
+
 }

@@ -37,6 +37,7 @@ public class Bird : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
+                GameControll.instance.gameOver = false;
 				audio.clip = swing;
 				audio.Play();
 				rb2d.WakeUp();
