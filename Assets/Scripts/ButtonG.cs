@@ -4,22 +4,24 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class ButtonG : MonoBehaviour {
+public class ButtonG : MonoBehaviour
+{
 
-	public GameObject fade;
-	private Animator anim;
+    public GameObject fade;
+    private Animator anim;
 
-	void Start(){
-		anim = fade.GetComponent<Animator>();
+    void Start()
+    {
+        anim = fade.GetComponent<Animator>();
 
-	}
+    }
 
     public void OnClick()
 
     {
-		
-		anim.SetTrigger("Fade");
-	   SceneManager.LoadScene("Scene02");
+
+        anim.SetTrigger("Fade");
+        SceneManager.LoadScene("Scene02");
 
 
     }

@@ -214,9 +214,9 @@ TextureImporter:
       name: spritesheet_2
       rect:
         serializedVersion: 2
-        x: 295
+        x: 302
         y: 121
-        width: 33
+        width: 26
         height: 135
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -515,7 +515,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 289
-        y: 112
+        y: 111
         width: 7
         height: 10
       alignment: 0
@@ -1219,7 +1219,7 @@ TextureImporter:
         width: 39
         height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
