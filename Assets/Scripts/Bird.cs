@@ -15,8 +15,10 @@ public class Bird : MonoBehaviour
 
     public GameObject staticOb;
 
-	public AudioSource audio;
-	public AudioClip swing;
+    public AudioSource audio;
+    public AudioClip swing;
+
+    private bool rUp = false;
 
 
 
@@ -26,7 +28,7 @@ public class Bird : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         m_Animator.speed = aniSpeed;
         rb2d.Sleep();
-		audio = GetComponent<AudioSource>();
+        audio = GetComponent<AudioSource>();
 
 
     }
@@ -35,12 +37,20 @@ public class Bird : MonoBehaviour
     {
         if (isDead == false)
         {
+            if (rUp)
+            {
+                transform.Rotate(Vector3.forward * Time.deltaTime * -130f);
+            }
+
+
             if (Input.GetMouseButtonDown(0))
             {
+                rUp = true;
+                transform.Rotate(Vector3.forward * 53f);
                 GameControll.instance.gameOver = false;
-				audio.clip = swing;
-				audio.Play();
-				rb2d.WakeUp();
+                audio.clip = swing;
+                audio.Play();
+                rb2d.WakeUp();
                 rb2d.velocity = Vector2.zero;
                 rb2d.AddForce(new Vector2(0, upForce));
                 staticOb.SetActive(false);
@@ -48,10 +58,11 @@ public class Bird : MonoBehaviour
         }
 
     }
-	void OnCollisionEnter2D(){
-		isDead = true;
-		GameControll.instance.BirdDied();
-	}
+    void OnCollisionEnter2D()
+    {
+        isDead = true;
+        GameControll.instance.BirdDied();
+    }
 
 
 }

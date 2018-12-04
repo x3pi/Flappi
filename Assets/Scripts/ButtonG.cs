@@ -20,7 +20,6 @@ public class ButtonG : MonoBehaviour
 
     {
 
-        anim.SetTrigger("Fade");
         SceneManager.LoadScene("Scene02");
 
 

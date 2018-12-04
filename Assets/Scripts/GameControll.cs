@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class GameControll : MonoBehaviour
 {
@@ -10,7 +12,7 @@ public class GameControll : MonoBehaviour
     public GameObject t1;
     public GameObject t2;
 
-      public GameObject t3;
+    public GameObject t3;
     public GameObject t4;
 
     public Sprite s0;
@@ -109,7 +111,7 @@ public class GameControll : MonoBehaviour
 
     public void RestartGame()
     {
-        Application.LoadLevel(1);
+        SceneManager.LoadScene("Scene02", LoadSceneMode.Single);
     }
 
     public void Share()
@@ -124,10 +126,12 @@ public class GameControll : MonoBehaviour
     {
         SpriteRenderer sr1 = T1.GetComponent<SpriteRenderer>();
         SpriteRenderer sr2 = T2.GetComponent<SpriteRenderer>();
-        var textArray = s.ToString().Split('\n');
-        for(int i = 0; i<textArray.Length;i++){    
-            if(i==0) UpdateS(sr1, textArray[0]);
-            if(i==1) UpdateS(sr2, textArray[1]);
+        char[] textArray = s.ToString().ToCharArray();
+
+        for (int i = 0; i < textArray.Length; i++)
+        {
+            if (i == 0) UpdateS(sr1, textArray[0].ToString());
+            if (i == 1) UpdateS(sr2, textArray[1].ToString());
         }
     }
 

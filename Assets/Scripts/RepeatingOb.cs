@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RepeatingOb : MonoBehaviour {
+public class RepeatingOb : MonoBehaviour
+{
 
-    private BoxCollider2D groundCollider;       
-    private float groundHorizontalLength;       
+    private BoxCollider2D groundCollider;
+    private float groundHorizontalLength;
 
-    private void Awake ()
+    private void Awake()
     {
-        groundCollider = GetComponent<BoxCollider2D> ();
+        groundCollider = GetComponent<BoxCollider2D>();
         groundHorizontalLength = groundCollider.size.x;
     }
 
@@ -17,7 +18,7 @@ public class RepeatingOb : MonoBehaviour {
     {
         if (transform.position.x < -groundHorizontalLength)
         {
-            RepositionBackground ();
+            RepositionBackground();
         }
     }
 
@@ -25,6 +26,6 @@ public class RepeatingOb : MonoBehaviour {
     {
         Vector2 groundOffSet = new Vector2(groundHorizontalLength * 2f, 0);
 
-        transform.position = (Vector2) transform.position + groundOffSet;
+        transform.position = (Vector2)transform.position + groundOffSet;
     }
 }
