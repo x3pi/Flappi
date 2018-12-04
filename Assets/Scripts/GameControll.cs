@@ -16,6 +16,11 @@ public class GameControll : MonoBehaviour
     public AudioClip audioHit;
 
 
+    public GameObject dieShow;
+    public GameObject btOk;
+    public GameObject btShare;
+
+
 
     void Awake()
     {
@@ -56,10 +61,17 @@ public class GameControll : MonoBehaviour
     {
         if (gameOver == false)
         {
+
             StartCoroutine(playEngineSound());
             gameOver = true;
+            dieShow.SetActive(true);
+            btOk.SetActive(true);
+            btShare.SetActive(true);
         }
     }
+
+
+
 
     IEnumerator playEngineSound()
     {
@@ -68,6 +80,16 @@ public class GameControll : MonoBehaviour
         yield return new WaitForSeconds(audio.clip.length);
         audio.clip = audioDie;
         audio.Play();
+    }
+
+    public void RestartGame()
+    {
+        Application.LoadLevel(1);
+    }
+
+    public void Share(){
+
+        Application.OpenURL("https://twitter.com/intent/tweet?text=Blog%20t%C3%A1c%20gi%E1%BA%A3%20https://x3pi.github.io/.");
     }
 
 
