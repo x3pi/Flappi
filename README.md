@@ -1,6 +1,8 @@
 # Flappi
 Simple Flappy Bird Game.
 
+Xem trước:
+
 https://www.youtube.com/watch?v=oDjauEyNbHg
 
 Chạy thử:
