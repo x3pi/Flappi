@@ -691,6 +691,32 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8642b5d33e59544aae50d78235a1583, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1018285569 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1443684729113284, guid: e8642b5d33e59544aae50d78235a1583,
+    type: 2}
+  m_PrefabInternal: {fileID: 1018285568}
+--- !u!114 &1018285570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1018285569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
 --- !u!1001 &1022408250
 Prefab:
   m_ObjectHideFlags: 0
