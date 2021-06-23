@@ -29,8 +29,6 @@ public class Bird : MonoBehaviour
         m_Animator.speed = aniSpeed;
         rb2d.Sleep();
         audio = GetComponent<AudioSource>();
-
-
     }
 
     void Update()
@@ -39,14 +37,21 @@ public class Bird : MonoBehaviour
         {
             if (rUp)
             {
-                transform.Rotate(Vector3.forward * Time.deltaTime * -130f);
+                if((transform.localEulerAngles.z<310 && transform.localEulerAngles.z > 80)==false){
+                    transform.Rotate(Vector3.forward * Time.deltaTime * -150f);
+                }
             }
-
 
             if (Input.GetMouseButtonDown(0))
             {
                 rUp = true;
-                transform.Rotate(Vector3.forward * 53f);
+                float x = 0f;
+                if(transform.localEulerAngles.z < 50){
+                    x = 50 - transform.localEulerAngles.z;
+                }else{
+                    x = 410 - transform.localEulerAngles.z;
+                }
+                transform.Rotate(Vector3.forward *x);
                 GameControll.instance.gameOver = false;
                 audio.clip = swing;
                 audio.Play();
